@@ -1,5 +1,6 @@
 "use strict";
 const api_key = "1559f8273a7d1ea05ca0f94049c931bb";
+const httpsFx = "https://cors-anywhere.herokuapp.com/"
 
 /**
  * Fetch data from OpenWeather Server
@@ -7,7 +8,7 @@ const api_key = "1559f8273a7d1ea05ca0f94049c931bb";
  * @param {function} callback => Callback Function
  */
 export const fetchData = function (URL, callback) {
-  fetch(`${URL}&appid=${api_key}`)
+  fetch(`${httpsFx + URL}&appid=${api_key}`)
     .then((res) => res.json())
     .then((data) => callback(data));
 };
